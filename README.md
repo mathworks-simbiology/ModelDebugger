@@ -1,6 +1,5 @@
 # Getting Started with Model Debugger for SimBiology
 
-
 ## Description
 The Model Debugger for SimBiology is a MATLAB application that lets you analyze model responses, model structure, and expressions during model simulation.
 
@@ -14,17 +13,23 @@ See also the GettingStarted.mlx.
 
 ## Example
 % Load model
+
 model = sbmlimport('lotka');
 
 % Configure model for simulation
+
 configset = getconfigset(model);
+
 configset.SolverOptions.AbsoluteTolerance = 1e-6;
+
 configset.SolverOptions.RelativeTolerance = 1e-6;
 
 % Define dose
+
 dose = sbiodose('dose for y1', 'TargetName', 'y1', 'Amount', 50);
 
 % Start Model Debugger for SimBiology for model and dose
+
 startSimBiologyDebugger(model, dose);
 
 ## System Requirements
